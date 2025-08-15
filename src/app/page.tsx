@@ -24,7 +24,7 @@ export default function DashboardPage() {
       <p>Email: {session?.user?.email}</p>
       <button
         onClick={() => signOut({ callbackUrl: "/login" })}
-        style={{ marginTop: "1rem" }}
+        className="w-full bg-blue-600 text-white mt-2 p-3 rounded-lg font-semibold hover:bg-blue-600 transition"
       >
         Sair
       </button>

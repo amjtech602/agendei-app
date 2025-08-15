@@ -8,34 +8,33 @@ export default function LoginCadastro() {
     const [isLogin, setIsLogin] = useState(true);
 
     return (
-        <div className="flex min-h-screen items-center justify-center bg-gray-100">
-            <div className="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden max-w-4xl w-full">
-
-                {/* Lado da imagem */}
-                <div className="md:w-1/2 hidden md:block bg-blue-600 p-5">
-                    <div className="flex flex-col gap-3">
-                        <div className="flex items-center gap-2">
-                            <Image
-                                src="/icons/calendar-static-white.png"
-                                alt="Agendei"
-                                width={45}
-                                height={45}
-                                className=""
-                            />
-                            <span className="text-white font-light text-2xl">Agenda.aí</span>
-                        </div>
-                        <div className="text-white font-bold text-2xl">
-                            <h2>Bem-vindo ao Agenda.aí</h2>
-                        </div>
-                        <div className="text-white">
-                            <span>Agende seus compromissos de foram fácil e rápida.</span>
-                        </div>
+        <div className="flex h-screen w-screen">
+            {/* Lado da imagem */}
+            <div className="hidden md:flex md:w-1/2 bg-blue-600 p-15">
+                <div className="flex flex-col gap-3">
+                    <div className="flex items-center gap-2">
+                        <Image
+                            src="/icons/calendar-static-white.png"
+                            alt="Agendei"
+                            width={45}
+                            height={45}
+                            className=""
+                        />
+                        <span className="text-white font-bold text-3xl">Agendei</span>
+                    </div>
+                    <div className="text-white font-bold text-4xl">
+                        <h2>Bem-vindo ao Agendei</h2>
+                    </div>
+                    <div className="text-white text-2xl">
+                        <span>Agende seus compromissos de foram fácil e rápida.</span>
                     </div>
                 </div>
+            </div>
 
-                {/* Lado do formulário */}
-                <div className="md:w-1/2 p-8 sm:p-12">
-                    <h2 className="text-2xl font-bold text-gray-800 mb-6">
+            {/* Lado do formulário */}
+            <div className="flex flex-col justify-center items-center w-full md:w-1/2 bg-white p-8 sm:p-12">
+                <div className="w-full max-w-md">
+                    <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
                         {isLogin ? "Entrar" : "Cadastrar"}
                     </h2>
 
@@ -60,7 +59,7 @@ export default function LoginCadastro() {
 
                         <button
                             type="submit"
-                            className="w-full bg-blue-600 text-white p-3 rounded-lg font-semibold hover:bg-blue-600 transition"
+                            className="w-full bg-blue-500 text-white p-3 rounded-lg font-semibold hover:bg-blue-600 transition"
                         >
                             {isLogin ? "Entrar" : "Cadastrar"}
                         </button>
@@ -91,12 +90,12 @@ export default function LoginCadastro() {
                         onClick={() => signIn("google", { callbackUrl: "/" })}
                         className="w-full flex items-center justify-center gap-3 py-2 mb-6 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 font-medium hover:bg-gray-50 dark:hover:bg-gray-700 shadow-sm hover:shadow-md transition-all duration-300"
                     >
-                         <Image
-                                src="/icons/google-icon.png"
-                                alt="Google"
-                                width={20}
-                                height={20}
-                            />
+                        <Image
+                            src="/icons/google-icon.png"
+                            alt="Google"
+                            width={20}
+                            height={20}
+                        />
                         Entrar com Google
                     </button>
                 </div>
