@@ -87,7 +87,7 @@ export default function LoginCadastro() {
 
                     {/* Botão Google */}
                     <button
-                        onClick={() => signIn("google", { callbackUrl: "/" })}
+                        onClick={() => signIn("google", { callbackUrl: "/painel" })}
                         className="w-full flex items-center justify-center gap-3 py-2 mb-6 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 font-medium hover:bg-gray-50 dark:hover:bg-gray-700 shadow-sm hover:shadow-md transition-all duration-300"
                     >
                         <Image
