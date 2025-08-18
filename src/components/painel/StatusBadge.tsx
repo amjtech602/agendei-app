@@ -1,5 +1,9 @@
+// interface Props {
+//     status: 'Confirmado' | 'Pendente' | 'Cancelado';
+// }
+
 interface Props {
-    status: 'Confirmado' | 'Pendente' | 'Cancelado';
+    status: string
 }
 
 const statusMap: Record<string, string> = {
