@@ -2,56 +2,50 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { Menu } from "lucide-react"; // ícone de três traços
+import { LayoutDashboard, Scissors, Calendar, Users, Settings } from "lucide-react";
 
-export default function Sidebar() {
+const links = [
+  { href: "/painel", label: "Painel", icon: LayoutDashboard },
+  { href: "/painel/servicos", label: "Serviços", icon: Scissors },
+  { href: "/painel/agenda", label: "Agenda", icon: Calendar },
+  { href: "/painel/clientes", label: "Clientes", icon: Users },
+  { href: "/painel/configuracoes", label: "Configurações", icon: Settings },
+];
+
+export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
-
-  const links = [
-    { href: "/painel", label: "Painel" },
-    { href: "/painel/servicos", label: "Serviços" },
-    { href: "/painel/agenda", label: "Agenda" },
-    { href: "/painel/clientes", label: "Clientes" },
-    { href: "/painel/configuracoes", label: "Configurações" },
-  ];
 
   return (
-    <>
-      {/* Botão hambúrguer (visível só no mobile) */}
-      <button
-        className="lg:hidden fixed top-4 left-.5 z-20 p-2 rounded-md  dark:bg-gray-800"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <Menu size={24} className="text-gray-700 dark:text-gray-200" />
-      </button>
-
-      {/* Sidebar (desktop sempre visível / mobile abre com slide) */}
-      <nav
-        className={`fixed top-16 left-0 h-full w-64 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 p-4 transform transition-transform duration-300 lg:translate-x-0
-        ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
-      >
-        <ul>
-          {links.map((link) => {
-            const isActive = pathname === link.href;
+    <aside
+      className={`
+        fixed top-0 left-0 h-screen w-64 bg-blue-600 shadow-lg transform transition-transform
+        ${isOpen ? "translate-x-0" : "-translate-x-full"} 
+        md:translate-x-0 z-40
+      `}
+    >
+      <nav className="mt-20 p-4">
+        <ul className="space-y-2">
+          {links.map(({ href, label, icon: Icon }) => {
+            const isActive = pathname === href;
             return (
-              <li
-                key={link.href}
-                className={`rounded mb-1 cursor-pointer ${
-                  isActive
-                    ? "font-semibold text-gray-700 bg-gray-200 dark:text-white dark:bg-gray-800"
-                    : "text-gray-500 hover:bg-gray-200 dark:text-gray-400 dark:hover:bg-gray-800"
-                }`}
-              >
-                <Link href={link.href} className="block px-3 py-2">
-                  {link.label}
+              <li key={href}>
+                <Link
+                  href={href}
+                  className={`flex items-center gap-3 rounded-lg px-4 py-2 font-medium transition-colors ${
+                    isActive
+                      ? "bg-white text-blue-600"
+                      : "text-white hover:bg-blue-500"
+                  }`}
+                  onClick={onClose}
+                >
+                  <Icon size={18} />
+                  {label}
                 </Link>
               </li>
             );
           })}
         </ul>
       </nav>
-    </>
+    </aside>
   );
 }
