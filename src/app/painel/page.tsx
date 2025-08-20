@@ -20,6 +20,7 @@ export default function PainelProfissional() {
             a.servico.toLowerCase().includes(search.toLowerCase());
         const matchesStatus = statusFilter === "Todos" || a.status === statusFilter;
         return matchesSearch && matchesStatus;
+        
     });
 
     return (
