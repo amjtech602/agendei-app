@@ -115,29 +115,30 @@ export default function LoginCadastro() {
 
     const [isLogin, setIsLogin] = useState(true);
 
-    return (
-        <div className="flex h-screen w-screen">
-            {/* Lado da imagem */}
-            <div className="hidden md:flex md:w-1/2 bg-blue-600 p-15">
-                <div className="flex flex-col gap-5">
-                    <div className="flex items-center gap-2">
-                        <Image
-                            src="/icons/calendar-static-white.png"
-                            alt="Agendou"
-                            width={45}
-                            height={45}
-                            className=""
-                        />
-                        <span className="text-white font-bold text-3xl">Agendou</span>
-                    </div>
-                    <div className="text-white font-bold text-4xl">
-                        <h2>Bem-vindo ao Agendou</h2>
-                    </div>
-                    <div className="text-white text-2xl">
-                        <span>Agende seus compromissos de foram fácil e rápida.</span>
-                    </div>
-                </div>
-            </div>
+    // return (
+    //     <div className="flex h-screen w-screen">
+    //         {/* Lado da imagem */}
+    //         <div className="hidden md:flex md:w-1/2 bg-blue-600 p-15">
+    //             <div className="flex flex-col gap-5">
+    //                 <div className="flex items-center gap-2">
+    //                     <Image
+    //                         src="/icons/calendar-static-white.png"
+    //                         alt="Agendou"
+    //                         width={45}
+    //                         height={45}
+    //                         className=""
+    //                     />
+    //                     <span className="text-white font-bold text-3xl">Agendou</span>
+    //                 </div>
+    //                 <div className="text-white font-bold text-4xl">
+    //                     <h2>Bem-vindo ao Agendou</h2>
+    //                 </div>
+    //                 <div className="text-white text-2xl">
+    //                     <span>Agende seus compromissos de foram fácil e rápida.</span>
+    //                 </div>
+    //             </div>
+    //         </div>
+    
 
 
   return (
